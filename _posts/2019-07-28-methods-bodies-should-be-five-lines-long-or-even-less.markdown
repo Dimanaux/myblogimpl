@@ -25,7 +25,7 @@ class UserWithVacation {
     
     public Hours vacationBalance() {
         return Hours.of(user.vacatoinDaysLeft().size())
-                .times(user.workHoursPerDay());
+                    .times(user.workHoursPerDay());
     }
 }
 ```
