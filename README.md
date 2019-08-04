@@ -1,3 +1,3 @@
 # myblogimpl
 
-[Welcome](dimanaux.github.io/myblogimpl)
+[Welcome](http://dimanaux.github.io/myblogimpl)
