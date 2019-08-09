@@ -73,5 +73,44 @@ processed = map process list
 ```
 
 Function `map` create abstraction between the way list is being accessed and what we want to do with it.
+We don't want to see procedural assembly like loops in our code.
 
 In a pinch use `forEach` method or something like that.
+
+But what if we have to repeat something? 
+
+There are a pure mathematical way to create iteration called recursion!
+```kotlin
+fun multiply(x: Int, y: Int): Int = when {
+    x == 0 -> 0
+    x == 1 -> y
+    else   -> y + multiply(x -  1, y)
+}
+```
+Recursion is much better than loop! Because
+1. It is abstract and declarative.
+2. It cannot iterate endlessly and it fails if program is wrong.
+3. It makes our code cleaner (because we can use variables within function scope).
+
+But! Remember Bob Martin's advice (from "Clean Code") steps :
+1. Make it work
+2. Refactor
+3. Optimize
+
+```
+// TODO: write about recursion optimization
+vvv
+```
+
+We can tail recursion to make it super fast.
+```kotlin
+fun multiply(x: Int, y: Int): Int {
+    tailrec fun iter(acc: Int, num: Int): Int = when {
+        num == 0 -> 0
+        num == 1 -> acc
+        else     -> iter(acc + x, num - 1)
+    }
+    return iter(0, y)
+}
+```
+
