@@ -2,8 +2,9 @@
 layout: post
 title: "Don't fight Optional in Java"
 date:  2019-07-25 11:38:11 +0300
-categories: java Optional functional Maybe
+categories: [java, functional]
 ---
+
 Many programmers don't know much about Optional in Java and they even don't want to understand it and use it in their purposes.
 ```java
 public User authenticate(HttpServletRequest req) {
@@ -28,7 +29,7 @@ public Optional<Account> authenticate(String username, String password) {
     return account.filter(u -> encoder.matches(password, u.getPassword()));
 }
 ```
-`Optional<User>` is not some odd object that makes you call `.get()` method and handle exceptions or check if it is null or something like this. 
+`Optional<User>` is not some odd object that makes you call `.get()` method and handle exceptions or check if it is null or something like this.
 It is your OBJECT ITSELF, but it may not present. You can invoke all its methods!!! like this:
 ```java
 Optional<Account> a = accountRepository.getFirst();

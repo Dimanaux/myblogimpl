@@ -2,7 +2,7 @@
 layout: post
 title: "We don't know OOP"
 date:  2019-07-30 12:12:12 +0300
-categories: OOP 'procedural programming'
+categories: [oop, procedural programming]
 ---
 What is Object-oriented programming?
 It is a paradigm where we use objects.
@@ -29,7 +29,7 @@ Entity.java (access modifiers are omitted).
 class User {
     String name;
     int age;
-    
+
     User() {}
     String getName() {
         return name;
@@ -51,7 +51,7 @@ UserService.java
 ```java
 class UserService {
     UserRepository userRepository;
-    
+
     boolean isAdult(User user) {
         return user.getAge() >= 18;
     }
@@ -81,7 +81,7 @@ We still can break User like this: `user.setAge(-1); userRepository.persist(user
 It is not an object-oriented program.
 
 ```c
-struct User { 
+struct User {
    char* name;
    int age;
 };

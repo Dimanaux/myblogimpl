@@ -2,9 +2,8 @@
 layout: post
 title: "Avoid loops in high level programs"
 date:  2019-08-09 12:21:12 +0300
-categories: procedural declarative programming
+categories: [procedural programming, declarative programming]
 ---
-
 Don't use loops!
 
 Why are we against loops in our code?
@@ -90,7 +89,7 @@ In a pinch use `forEach` method or something like that.
 
 But what if we have to repeat something?
 
-There are a pure mathematical way to create iteration called recursion!
+There is a pure mathematical way to create iteration called recursion!
 
 ```kotlin
 fun multiply(x: Int, y: Int): Int = when {

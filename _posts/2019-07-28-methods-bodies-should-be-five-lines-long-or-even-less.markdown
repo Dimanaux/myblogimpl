@@ -2,7 +2,7 @@
 layout: post
 title: "Methods' bodies should be five lines long (or even less)"
 date:  2019-07-28 20:43:32 +0300
-categories: code design
+categories: [code, design]
 ---
 Think of method's size.
 How can large methods be convenient? They can't.
@@ -18,11 +18,11 @@ And the best method is one-lined method. It looks like:
 ```java
 class UserWithVacation {
     private final User user;
-    
+
     UserWithVacation(User user) {
         this.user = user;
     }
-    
+
     public Hours vacationBalance() {
         return Hours.of(user.vacatoinDaysLeft().size())
                     .times(user.workHoursPerDay());
@@ -37,5 +37,5 @@ For instance, what is `person.addFriend(Person other)`? It is `if (other.subscri
 
 What is `person.subscribedTo(Person other)`? It is `person.subscriptions.contains(other)`. What is `subscribeTo`? It is `person.subscriptions.add(other)` then `person.save()`.
 
-Abstract methods call a bit less abstract methods and they call even less abstract methods and so on. 
+Abstract methods call a bit less abstract methods and they call even less abstract methods and so on.
 Very abstract methods (your application itself, business logic) should not contain low-level methods calls. It makes our software inflexible.
