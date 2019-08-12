@@ -20,7 +20,7 @@ FACTORIAL:
         TEST %eax, %eax
         JZ   RETURN
         MUL  %ecx
-        DEC  %ebx
+        DEC  %ecx
         JMP  LOOP
     RETURN:
     POP %ecx
