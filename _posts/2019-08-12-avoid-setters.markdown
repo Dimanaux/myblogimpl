@@ -87,5 +87,5 @@ new Thread(car::drive).start();
 new Thread(() -> {
     /* We can't switch engine while driving */
 }).start();
-car.dirve(); // OK
+car.drive(); // OK
 ```
