@@ -70,3 +70,6 @@ Now it's very simple:
 Message notification = MessageFactory.emailNotification();
 notification.send();
 ```
+
+Now we can easily change our HtmlMessage implementation without breaking other code.
+We can rename its fields, add new, change recipients' type from List to Set and so on. 
