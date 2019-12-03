@@ -34,7 +34,7 @@ apt-cache search gst123
 apt-get install gst123
 ```
 
-<script id="asciicast-RLQLZpr0bVe7zob5EYyU0f3Vl" src="https://asciinema.org/a/RLQLZpr0bVe7zob5EYyU0f3Vl.js" async></script>
+<script id="asciicast-F0umUkaUWQRxcPQIeWBSeZwTf" src="https://asciinema.org/a/F0umUkaUWQRxcPQIeWBSeZwTf.js" async></script>
 
 ## 3. Продвинутый поиск
 Мы хотим найти два консольных файловых менеджера. С помощью утилиты apt-cache это практически невозможно. Если мы хотим найти консольный файловый менеджер, мы можем поискать по фразе "file manager", и нам придётся листать очень много строк, или мы можем добавить к фразе "console", "terminal" или "cli" и тогда мы не найдём ничего.
@@ -56,8 +56,7 @@ apt-cache search "cli file manager"
 
 Среди выдачи `apt-cache search "Midnight Commander"` мы найдём то, что искали - `mc`.
 
-
-<script id="asciicast-RLQLZpr0bVe7zob5EYyU0f3Vl" src="https://asciinema.org/a/RLQLZpr0bVe7zob5EYyU0f3Vl.js" async></script>
+<script id="asciicast-1BvOz6P0IzrvI4zI2CimgwWIR" src="https://asciinema.org/a/1BvOz6P0IzrvI4zI2CimgwWIR.js" async></script>
 
 ## 4. Просмотр информации о пакетах
 Чтобы вывести информацию о пакете, мы можем воспользоваться утилитой `apt-cache show`. Ей нужно передать название пакета.
