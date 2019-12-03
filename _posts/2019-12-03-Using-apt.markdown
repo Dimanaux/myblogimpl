@@ -8,7 +8,7 @@ categories: [operating systems, linux, apt]
 # Управление ПО
 
 ```
-<%= render 'templates/titulnik', topic: '4. Управление ПО' =>
+<%= render 'templates/titulnik', topic: '4. Управление ПО' %>
 ```
 
 4. Управление ПО
