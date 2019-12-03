@@ -1,0 +1,82 @@
+---
+layout: post
+title: "Using APT"
+date:  2019-12-03 20:58:32 +0300
+categories: [operating systems, linux, apt]
+---
+
+# Управление ПО
+
+```
+<%= render 'templates/titulnik', topic: '4. Управление ПО'
+```
+
+4. Управление ПО
+
+## 1. Добавить репозиторий deb-multimedia
+```
+printf “deb http://www.deb-multimedia.org buster main non-free\n” > /etc/apt/sources.list.d/media.sources.list
+apt-get install deb-multimedia-keyring
+apt-get update -oAcquire::AllowInsecureRepositories=true
+# ^^^ так надо: http://www.deb-multimedia.org/
+```
+
+<script id="asciicast-RLQLZpr0bVe7zob5EYyU0f3Vl" src="https://asciinema.org/a/RLQLZpr0bVe7zob5EYyU0f3Vl.js" async></script>
+
+## 2. Установить консольный музыкальный плеер
+```
+apt-get install plait
+```
+
+<script id="asciicast-RLQLZpr0bVe7zob5EYyU0f3Vl" src="https://asciinema.org/a/RLQLZpr0bVe7zob5EYyU0f3Vl.js" async></script>
+
+## 3. Найти любые два консольных файловых менеджера
+```
+apt-cache search “file manager” | less
+# Found: fdclone, lfm
+```
+
+<script id="asciicast-RLQLZpr0bVe7zob5EYyU0f3Vl" src="https://asciinema.org/a/RLQLZpr0bVe7zob5EYyU0f3Vl.js" async></script>
+
+## 4. Вывести информацию о каждом
+```
+apt-cache show fdclone
+apt-cache show lfm
+```
+
+## 5. Найти все пакеты, от которых они зависят
+```
+apt-cache depends fdclone # libc6 libncurses6 libtinfo6
+apt-cache depends lfm # python3
+```
+
+## 6. Установить тот файловый менеджер, для установки которого потребуется меньше дискового пространства
+```
+apt-get install lfm
+```
+
+<script id="asciicast-oPFQoOFb92AjS2WmPmFIsRo6s" src="https://asciinema.org/a/oPFQoOFb92AjS2WmPmFIsRo6s.js" async></script>
+
+## 7. Очистить кэш скачанных пакетов
+```
+apt-get clean
+```
+
+## 8. Удалить установленный в п.1 плеер
+```
+apt-get remove plait
+```
+
+## 9. Проверить установленные пакеты на корректность удовлетворения зависимостей
+`apt-get check`
+
+## 10. Удалить все пакеты, которые устанавливались автоматически и больше не нужны
+`apt autoremove`
+
+## 11. Зафиксировать пакет с текущей версией пакета из п. 6.
+`apt-mark hold lfm`
+
+## 12. "Безопасно" обновить все пакеты системы.
+`apt-get upgrade`
+
+<script id="asciicast-fDkbjbUeUFj2QKHI2AHrzuzmv" src="https://asciinema.org/a/fDkbjbUeUFj2QKHI2AHrzuzmv.js" async></script>
